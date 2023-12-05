@@ -1,6 +1,5 @@
 name: Build on DockerHub and Deploy to AWS
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -24,7 +23,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: ./Source
+          context: ./
           push: true
           dockerfile: ./Dockerfile
           tags: pratik180797/bsc23grassroots:tagname
