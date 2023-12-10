@@ -34,4 +34,4 @@ jobs:
           # Path to SARIF file relative to the root of the repository
           sarif_file: snyk-sarif-report.json
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: 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
