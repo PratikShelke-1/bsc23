@@ -11,7 +11,7 @@ jobs:
     name: 'Snyk Code Scan'
     runs-on: ubuntu-latest
     env:
-      SNYK_TOKEN: ce0aa35e-03f2-4437-9a66-0ae35598dbe8
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
     steps:
       # Checkout Code
@@ -22,7 +22,7 @@ jobs:
       - name: Install Snyk & Authenticate
         run: |
           sudo npm install -g snyk
-          snyk auth ce0aa35e-03f2-4437-9a66-0ae35598dbe8
+          snyk auth ${SNYK_TOKEN}
       # Run Snyk Code
       - name: Run Snyk Code
         run: |
