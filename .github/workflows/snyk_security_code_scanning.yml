@@ -33,6 +33,11 @@ jobs:
         with:
           # Path to SARIF file relative to the root of the repository
           sarif_file: snyk-sarif-report.json
+      - name: Set GitHub repository settings
+        run: |
+          gh api -X PATCH repos/:owner/:repo -f security_events_write=true
+          gh api -X PATCH repos/:owner/:repo -f actions_read=true
+          gh api -X PATCH repos/:owner/:repo -f contents_read=true
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
         
