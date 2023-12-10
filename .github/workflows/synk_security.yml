@@ -27,7 +27,7 @@ jobs:
     - name: Install Python dependencies with Poetry
       run: poetry install -v
     - name: Run tests
-      run: poetry run pytest
+      run: poetry run pytest Source/test.py
     - name: Test dependencies with Snyk
       run: |
         pip install -r Source/requirements.txt
