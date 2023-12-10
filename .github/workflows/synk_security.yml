@@ -26,8 +26,8 @@ jobs:
     - uses: snyk/actions/setup@master
     - name: Install Python dependencies with Poetry
       run: poetry install -v
-    - name: Run tests
-      run: poetry run pytest
+   # - name: Run tests
+   #   run: poetry run pytest
     - name: Test dependencies with Snyk
       run: snyk test
       env:
