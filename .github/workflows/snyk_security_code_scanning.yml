@@ -26,7 +26,7 @@ jobs:
       # Run Snyk Code
       - name: Run Snyk Code
         run: |
-          snyk code test --json > snyk-sarif-report.json
+          snyk code test --json --debug > snyk-sarif-report.json
         continue-on-error: true
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
