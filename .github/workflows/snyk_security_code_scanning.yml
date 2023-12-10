@@ -35,3 +35,4 @@ jobs:
           sarif_file: snyk-sarif-report.json
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+        
