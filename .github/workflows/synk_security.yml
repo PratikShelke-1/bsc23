@@ -17,7 +17,6 @@ jobs:
     - name: Install Poetry
       run: curl -sSL https://github.com/python-poetry/install.python-poetry.org/raw/main/install-poetry.py > install-poetry.py
            python install-poetry.py
-
     - name: Show environment
       run: | 
         python --version
