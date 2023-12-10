@@ -14,20 +14,20 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: 3.9
-   # - name: Install Poetry
-   #   run: curl -sSL https://github.com/python-poetry/install.python-poetry.org/blob/main/install-poetry.py | python -
+    - name: Install Poetry
+      run: curl -sSL https://github.com/python-poetry/install.python-poetry.org/blob/main/install-poetry.py | python -
     - name: Show environment
       run: | 
         python --version
         pip --version
-  #    poetry --version
+        poetry --version
     - uses: snyk/actions/setup@master
- #   - name: Install Python dependencies with Poetry
- #     run: poetry install -v
- #   - name: Run tests
- #     run: poetry run pytest
+    - name: Install Python dependencies with Poetry
+      run: poetry install -v
+    - name: Run tests
+      run: poetry run pytest
     - name: Test dependencies with Snyk
-      run: snyk test --org=ce0aa35e-03f2-4437-9a66-0ae35598dbe8
+      run: snyk test
       env:
         SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
     - name: Monitor dependencies for security issues with Snyk
